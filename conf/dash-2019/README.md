@@ -29,12 +29,19 @@ In this lab for the **DASH 2019 conference**, we'll use a Docker Enterprise clus
 >   * [Task 3.3: Deploy DataDog Agent for Infrastructure](#task3.3)
 >   * [Task 3.4: Get the DataDog Java Agent, Modify pom.xml and Dockerfile to enable DataDog APM](#task3.4)
 >   * [Task 3.5: Deploy the Updated Application](#task3.5)
-> * [Task 4: Deploy to Kubernetes](#task4)
->   * [Task 4.1: Build .NET Core app instead of .NET](#task4.1)
->   * [Task 4.2: Examine the Docker Compose File](#task4.2)
->   * [Task 4.3: Deploy to Kubernetes using the Docker Compose file](#task4.3)
->   * [Task 4.4: Verify the app](#task4.4)
-> * [Task 5: Security Scanning](#task5)
+> * [Task 4: Deploy DataDog for Kubernetes](#task4)
+>   * [Task 4.1: Enable Kubernetes in DataDog](#task4.1)
+>   * [Task 4.2: Switch All Worker Nodes to Mixed Orchestration](#task4.2)
+>   * [Task 4.3: Deploy DataDog API Key to a Kubernetes Secret](#task4.3)
+>   * [Task 4.4: Deploy Kubernetes State Metrics](#task4.4)
+>   * [Task 4.5: Deploy DataDog Agent in Kubernetes](#task4.5)
+> * [Task 5: Deploy the App to Kubernetes](#task5)
+>   * [Task 5.1: Build .NET Core app instead of .NET](#task5.1)
+>   * [Task 5.2: Build the Java App that depends on the .NET Core app](#task5.2)
+>   * [Task 5.3: Examine the Docker Compose File](#task5.3)
+>   * [Task 5.4: Deploy to Kubernetes using the Docker Compose file](#task5.4)
+>   * [Task 5.5: Verify the app](#task5.5)
+> * [Task 6: Security Scanning](#task6)
 
 ## Understanding the Play With Docker Interface
 
@@ -757,7 +764,7 @@ secrets:
     external: true
 ```
 
-### <a name="task5.3"></a>Task 5.4: Deploy to Kubernetes using the Docker Compose file
+### <a name="task5.4"></a>Task 5.4: Deploy to Kubernetes using the Docker Compose file
 ![](../../images/linux75.png)
 
 Login to UCP, go to Shared resources, Stacks.
@@ -776,7 +783,7 @@ Click on it to see the details.
 
 ![](../../images/kube-stack-details.png)
 
-### <a name="task5.4"></a>Task 5.5: Verify the app
+### <a name="task5.5"></a>Task 5.5: Verify the app
 ![](../../images/linux75.png)
 
 Go to Kubernetes / Pod. See the pods being deployed.
