@@ -464,42 +464,42 @@ docker run -d --name datadog-agent \
 1. Enter the same name as the previously deployed app
 1. Click `Next`
 1. Copy the below `docker-compose.yml` into the section `2. Add Application File` of UCP Stacks window above and replace `<dtr hostname>` with the value of `$DTR_HOST`
-    ```
+    ```yaml
     version: "3.3"
 
     services:
 
-    database:
+      database:
         image: <dtr hostname>/java/database
         # set default mysql root password, change as needed
         environment:
-        MYSQL_ROOT_PASSWORD: mysql_password
+          MYSQL_ROOT_PASSWORD: mysql_password
         # Expose port 3306 to host. 
         ports:
-        - "3306:3306" 
+          - "3306:3306" 
         networks:
-        - back-tier
-        - datadog-agent
+          - back-tier
+          - datadog-agent
 
-    webserver:
-        image: <dtr hostname>/java/java_web:latest-datadog
+      webserver:
+        image: <dtr hostname>/java/java_web
         ports:
-        - "8080:8080" 
+          - "8080:8080" 
         networks:
-        - front-tier
-        - back-tier
-        - datadog-agent
+          - front-tier
+          - back-tier
+          - datadog-agent
 
     networks:
-    back-tier:
-        external: true
-    front-tier:
-        external: true
-    datadog-agent:
-        external: true
+      back-tier:
+        external: true 
+      front-tier:
+        external: true 
+      datadog-agent:
+        external: true 
 
     secrets:
-    mysql_password:
+      mysql_password:
         external: true
     ```
 1. Click `Create`
