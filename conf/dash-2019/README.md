@@ -683,8 +683,8 @@ Start by porting the .NET part of our application to a Linux container using .NE
 	$ cd ~/hybrid-app/java-app-v2
 	$ mkdir apm
 	$ cp ~/hybrid-app/java-app/apm/dd-java-agent.jar apm/
-	$ cp -vf ~/hybrid-app/monitoring/java-app-v2/Dockerfile .
-	$ cp -vf ~/hybrid-app/monitoring/java-app-v2/pom.xml app/
+	$ cp -vf ~/hybrid-app/monitoring/datadog/java-app-v2/Dockerfile .
+	$ cp -vf ~/hybrid-app/monitoring/datadog/java-app-v2/pom.xml app/
 	$ docker build -t $DTR_HOST/java/java_web:2 .
 	$ docker login -u java_user $DTR_HOST
 	$ docker push $DTR_HOST/java/java_web:2
